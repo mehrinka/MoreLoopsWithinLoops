@@ -235,7 +235,7 @@ def numbers_constant_forward(r, maxnum, n):
     for j in range(r):
         for k in range(maxnum):
             for z in range(n):
-                print(k + 1 + ' ', end='')
+                print(k + 1, end='')
         print()
 
 
@@ -279,6 +279,12 @@ def numbers_constant_backwards(r, maxnum, n):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
+
+    for j in range(r):
+        for k in range(maxnum, -1, -1):
+            for z in range(n):
+                print(k, end='')
+        print()
 
 
 def run_test_numbers_increasing_forward():
@@ -331,6 +337,12 @@ def numbers_increasing_forward(r, maxnum):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
+
+    for j in range(r):
+        for k in range(maxnum):
+            for z in range(k + 1):
+                print(k + 1, end='')
+        print()
 
 
 # ----------------------------------------------------------------------
