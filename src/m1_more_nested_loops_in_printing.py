@@ -76,7 +76,7 @@ def triangle_right_justified(r):
 
     for j in range(r + 1):
         for k in range(j):
-            print((r - j) * ' ' + (k + 1), end='')
+            print(k + 1, end='')
         print()
 
 
@@ -231,6 +231,12 @@ def numbers_constant_forward(r, maxnum, n):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
+
+    for j in range(r):
+        for k in range(maxnum):
+            for z in range(n):
+                print(k + 1 + ' ', end='')
+        print()
 
 
 def run_test_numbers_constant_backwards():
