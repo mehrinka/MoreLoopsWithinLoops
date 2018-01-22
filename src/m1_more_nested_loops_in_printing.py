@@ -55,7 +55,7 @@ def triangle_right_justified(r):
     For purposes of "lining up", assume r is a single digit.
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # HINT: Do the following problem FIRST, then convert x's to spaces:
@@ -74,9 +74,14 @@ def triangle_right_justified(r):
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
 
-    for j in range(r + 1):
-        for k in range(j):
-            print(k + 1, end='')
+    for j in range(1, r + 1):
+        count = 1
+        for k in range(r, 0, -1):
+            if k > j:
+                print(' ', end='')
+            else:
+                print(count, end='')
+                count = count + 1
         print()
 
 
@@ -114,7 +119,7 @@ def triangle_upside_down(r):
     For purposes of "lining up", assume r is a single digit.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -122,6 +127,16 @@ def triangle_upside_down(r):
     #   in this or the other problems in this module, as doing so would
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
+
+    for j in range(r):
+        count = 1
+        for k in range(r):
+            if k < j:
+                print(' ', end='')
+            else:
+                print(count, end='')
+                count = count + 1
+        print()
 
 
 def run_test_vee():
@@ -174,6 +189,19 @@ def vee(r):
     #   defeat the goal of providing practice at loops within loops.
     # ------------------------------------------------------------------
 
+    for j in range(r):
+        count = 1
+        for k in range(2 * r + 1):
+            if k < r:
+                print(count, end='')
+                count = count + 1
+            if k == r:
+                print('-', end='')
+            if k > r:
+                print(count - 1, end='')
+                count = count - 1
+        print()
+
 
 def run_test_numbers_constant_forward():
     """ Tests the    numbers_constant_forward    function. """
@@ -221,7 +249,7 @@ def numbers_constant_forward(r, maxnum, n):
     Preconditions:  r, maxnum and n are positive integers.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # HINT: What loop structure do you need for this problem?
@@ -236,6 +264,7 @@ def numbers_constant_forward(r, maxnum, n):
         for k in range(maxnum):
             for z in range(n):
                 print(k + 1, end='')
+            print(' ', end='')
         print()
 
 
@@ -271,7 +300,7 @@ def numbers_constant_backwards(r, maxnum, n):
     Preconditions:  r, maxnum and n are positive integers.
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # Done: 6. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -284,6 +313,7 @@ def numbers_constant_backwards(r, maxnum, n):
         for k in range(maxnum, -1, -1):
             for z in range(n):
                 print(k, end='')
+            print(' ', end='')
         print()
 
 
@@ -329,7 +359,7 @@ def numbers_increasing_forward(r, maxnum):
     Preconditions:  r and maxnum are positive integers.
     """
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # Done: 7. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -342,6 +372,7 @@ def numbers_increasing_forward(r, maxnum):
         for k in range(maxnum):
             for z in range(k + 1):
                 print(k + 1, end='')
+            print(' ', end='')
         print()
 
 
