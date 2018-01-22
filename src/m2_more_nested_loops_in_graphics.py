@@ -57,18 +57,19 @@ def draw_upside_down_wall(rectangle, n, window):
     window.render()
     width = rectangle.get_width()
     height = rectangle.get_height()
-    corner1 = rectangle.corner_1
-    corner2 = rectangle.corner_2
+    corner1y = rectangle.corner_1.y
+    corner2y = rectangle.corner_2.y
+
     for j in range(n):
-        corner1.x = rectangle.corner_1.x
-        corner2.x = rectangle.corner_2.x
+        corner1x = rectangle.corner_1.x + 0.25 * width * j
+        corner2x = rectangle.corner_2.x + 0.25 * width * j
         for k in range(n - j - 1):
-            rectangle1 = rg.Rectangle(rectangle.corner_1, rectangle.corner_2)
+            rectangle1 = rg.Rectangle(rg.Point(corner1x, corner1y), rg.Point(corner2x, corner2y))
             rectangle1.attach_to(window)
-            corner1.x = corner1.x + 0.5 * width
-            corner2.x = corner2.x + 0.5 * width
-        corner1.y = corner1.y + height
-        corner2.y = corner2.y + height
+            corner1x = corner1x + 0.5 * width
+            corner2x = corner2x + 0.5 * width
+        corner1y = corner1y + height
+        corner2y = corner2y + height
     window.render()
 
 
