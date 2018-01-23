@@ -152,7 +152,7 @@ def largest_negative_number(seq_seq):
     where each subsequence contains only numbers.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # CHALLENGE: Try to solve this problem with no additional sequences
@@ -164,8 +164,10 @@ def largest_negative_number(seq_seq):
     for j in range(len(seq_seq)):
         for k in range(len(seq_seq[j])):
             if seq_seq[j][k] < 0:
+                if largest == None:
+                    largest = seq_seq[j][k]
                 if seq_seq[j][k] > largest:
-                    seq_seq[j][k] = largest
+                    largest = seq_seq[j][k]
     return largest
 
 
@@ -415,6 +417,18 @@ def first_is_elsewhere_too(seq_seq):
     #   in this problem, as doing so would defeat the goal of providing
     #   practice at loops within loops (within loops within ...)
     # ------------------------------------------------------------------
+
+    first = None
+    for k in range(len(seq_seq)):
+        for j in range(len(seq_seq[0])):
+            if first == None:
+                first = seq_seq[0][0]
+
+    for j in range(len(seq_seq)):
+        for k in range(len(seq_seq[j])):
+            if seq_seq[k][j] == first:
+                return True
+    return False
 
 
 # ----------------------------------------------------------------------
