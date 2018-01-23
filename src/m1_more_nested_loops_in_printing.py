@@ -191,7 +191,7 @@ def vee(r):
 
     for j in range(r):
         count = 1
-        for k in range(2 * r + 1):
+        for k in range(2 * r + 1 - j):
             if k < r:
                 print(count, end='')
                 count = count + 1

@@ -419,14 +419,16 @@ def first_is_elsewhere_too(seq_seq):
     # ------------------------------------------------------------------
 
     first = None
-    for k in range(len(seq_seq)):
-        for j in range(len(seq_seq[0])):
-            if first == None:
-                first = seq_seq[0][0]
+    if len(seq_seq[0]) > 0:
+        first = seq_seq[0][0]
 
     for j in range(len(seq_seq)):
-        for k in range(len(seq_seq[j])):
-            if seq_seq[k][j] == first:
+        if len(seq_seq[j]) > 0:
+            for k in range(len(seq_seq[j])):
+                if seq_seq[j][k] == first:
+                    return True
+        if len(seq_seq[j]) == None:
+            if first == None:
                 return True
     return False
 
