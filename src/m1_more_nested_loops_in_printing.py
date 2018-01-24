@@ -180,7 +180,7 @@ def vee(r):
     For purposes of "lining up", assume r is a single digit.
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -191,13 +191,17 @@ def vee(r):
 
     for j in range(r):
         count = 1
-        for k in range(2 * r + 1 - j):
-            if k < r:
+        count1 = 0
+        for z in range(2 * r + 1 - j):
+            if z < j:
+                print(' ', end='')
+        for k in range(2 * r + 1 - 2 * j):
+            if k < (r - j):
                 print(count, end='')
                 count = count + 1
-            if k == r:
+            if k == (r - j):
                 print('-', end='')
-            if k > r:
+            if k > (r - j):
                 print(count - 1, end='')
                 count = count - 1
         print()
