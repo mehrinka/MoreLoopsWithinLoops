@@ -379,7 +379,7 @@ def first_is_elsewhere_too(seq_seq):
     For example, if the given argument is:
         [(3, 1, 4),
          (13, 10, 11, 7, 10),
-         [11, 12, 3, 10]]
+         [11, 12, 4, 10]]
     then this function returns True because 3 appears
     in the first subsequence and also in the third subsequence.
 
@@ -418,23 +418,14 @@ def first_is_elsewhere_too(seq_seq):
     #   practice at loops within loops (within loops within ...)
     # ------------------------------------------------------------------
 
-    first = None
     if len(seq_seq[0]) > 0:
-        first = seq_seq[0][0]
-
-    count = 0
-    for j in range(len(seq_seq)):
-        if len(seq_seq[j]) > 0:
-            for k in range(len(seq_seq[j])):
-                if count == 0:
-                    pass
-                else:
-                    if seq_seq[j][k] == first:
-                        return True
-                count = count + 1
-        if len(seq_seq[j]) == None:
-            if first == None:
-                return True
+        for z in range(len(seq_seq[0])):
+            first = seq_seq[0][z]
+            for j in range(1, len(seq_seq)):
+                if len(seq_seq[j]) > 0:
+                    for k in range(len(seq_seq[j])):
+                        if seq_seq[j][k] == first:
+                            return True
     return False
 
 
